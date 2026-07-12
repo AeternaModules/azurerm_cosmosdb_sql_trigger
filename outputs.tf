@@ -1,3 +1,7 @@
+output "cosmosdb_sql_triggers_id" {
+  description = "Map of id values across all cosmosdb_sql_triggers, keyed the same as var.cosmosdb_sql_triggers"
+  value       = { for k, v in azurerm_cosmosdb_sql_trigger.cosmosdb_sql_triggers : k => v.id }
+}
 output "cosmosdb_sql_triggers_body" {
   description = "Map of body values across all cosmosdb_sql_triggers, keyed the same as var.cosmosdb_sql_triggers"
   value       = { for k, v in azurerm_cosmosdb_sql_trigger.cosmosdb_sql_triggers : k => v.body }
